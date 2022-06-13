@@ -81,15 +81,15 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(2.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
-                      maximumSize: const Size(115, 50),
+                      minimumSize: const Size(105, 50),
+                      maximumSize: const Size(110, 50),
                       primary: const Color.fromRGBO(1, 205, 170, 120),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -103,11 +103,11 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
                     ),
                   ),
                   const SizedBox(
-                    width: 13,
+                    width: 5,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
+                      minimumSize: const Size(90, 50),
                       maximumSize: const Size(115, 50),
                       primary: const Color.fromRGBO(1, 205, 170, 120),
                       shape: RoundedRectangleBorder(
@@ -123,12 +123,12 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
                     onPressed: () {},
                   ),
                   const SizedBox(
-                    width: 13,
+                    width: 5,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
-                      maximumSize: const Size(115, 50),
+                      minimumSize: const Size(90, 50),
+                      maximumSize: const Size(105, 50),
                       primary: const Color.fromRGBO(1, 205, 170, 120),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),

@@ -74,15 +74,15 @@ class Analysis_screen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(2.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(115, 50),
-                    maximumSize: const Size(115, 50),
+                    minimumSize: const Size(90, 50),
+                    maximumSize: const Size(105, 50),
                     primary: const Color.fromRGBO(1, 205, 170 ,120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -97,11 +97,11 @@ class Analysis_screen extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(width: 13,),
+                const SizedBox(width: 15,),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(115, 50),
-                    maximumSize: const Size(115, 50),
+                    minimumSize: const Size(90, 50),
+                    maximumSize: const Size(105, 50),
                     primary: const Color.fromRGBO(1, 205, 170 ,120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
@@ -112,11 +112,11 @@ class Analysis_screen extends StatelessWidget {
 
                   onPressed: (){},
                 ),
-                const SizedBox(width: 13,),
+                const SizedBox(width: 15,),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(115, 50),
-                    maximumSize: const Size(115, 50),
+                    minimumSize: const Size(90, 50),
+                    maximumSize: const Size(105, 50),
                     primary: const Color.fromRGBO(1, 205, 170 ,120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),

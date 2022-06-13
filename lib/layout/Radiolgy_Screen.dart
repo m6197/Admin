@@ -82,63 +82,63 @@ class _RadiolgyScreenState extends State<RadiolgyScreen> {
               ),
             ],
           ),
-           Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Row(
-               crossAxisAlignment: CrossAxisAlignment.center,
-               mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
-                      maximumSize: const Size(115, 50),
-                      primary: const Color.fromRGBO(1, 205, 170 ,120),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(105, 50),
+                    maximumSize: const Size(110, 50),
+                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: const Text("X-rays"),
-                    onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Xrays()),
-                      );
-                    },
                   ),
-                  const SizedBox(width: 13,),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
-                      maximumSize: const Size(115, 50),
-                      primary: const Color.fromRGBO(1, 205, 170 ,120),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
+                  child: const Text("X-rays"),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Xrays()),
+                    );
+                  },
+                ),
+                const SizedBox(width: 5,),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(90, 50),
+                    maximumSize: const Size(115, 50),
+                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: const Text("  X-rays with \n        dye"),
+                  ),
+                  child: const Text("  X-rays with \n        dye"),
 
 
-                    onPressed: (){},
-                  ),
-                  const SizedBox(width: 13,),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(115, 50),
-                      maximumSize: const Size(115, 50),
-                      primary: const Color.fromRGBO(1, 205, 170 ,120),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
+                  onPressed: (){},
+                ),
+                const SizedBox(width: 5,),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(90, 50),
+                    maximumSize: const Size(105, 50),
+                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: const Text("Ultrasound",
+                  ),
+                  child: const Text("Ultrasound",
 
-                    ),
-                    onPressed: (){},
                   ),
-                ],
-              ),
-           ),
+                  onPressed: (){},
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
