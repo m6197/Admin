@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/components/components.dart';
-import '../login/login_screen.dart';
+import '../../view/shared/components/components.dart';
 import 'Personal Data.dart';
 
 class setting extends StatelessWidget {
@@ -30,21 +29,23 @@ class setting extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 20,),
-
+        SizedBox(
+          height: 20,
+        ),
         InkWell(
           onTap: () {},
-          child:Padding(
+          child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
                   Row(
                     children: [
                       Image.asset('assets/image/noun-language-1.png'),
-                      SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       Text('Languages'),
                     ],
                   ),
@@ -52,11 +53,10 @@ class setting extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.arrow_forward_ios,
-                        color: Color.fromRGBO(1, 205, 170,90),
+                        color: Color.fromRGBO(1, 205, 170, 90),
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -64,17 +64,18 @@ class setting extends StatelessWidget {
         ),
         InkWell(
           onTap: () {},
-          child:Padding(
+          child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
                   Row(
                     children: [
                       Image.asset('assets/image/noun-faq-135560.png'),
-                      SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       Text('FAQs'),
                     ],
                   ),
@@ -82,11 +83,10 @@ class setting extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.arrow_forward_ios,
-                        color: Color.fromRGBO(1, 205, 170,90),
+                        color: Color.fromRGBO(1, 205, 170, 90),
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -94,17 +94,18 @@ class setting extends StatelessWidget {
         ),
         InkWell(
           onTap: () {},
-          child:Padding(
+          child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
                   Row(
                     children: [
                       Image.asset('assets/image/noun-community-.png'),
-                      SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       Text('Community'),
                     ],
                   ),
@@ -112,36 +113,19 @@ class setting extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.arrow_forward_ios,
-                        color: Color.fromRGBO(1, 205, 170,90),
+                        color: Color.fromRGBO(1, 205, 170, 90),
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
           ),
         ),
-      Expanded(
-          child:
-      Align(
-          alignment: Alignment.bottomCenter,
-          child:
-        defaultButton(
-            width: 240,
-            text: 'Log out',
-            function: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => loginScreen()),
-                );
-              }
+        SizedBox(
+          height: 20,
         ),
-      ),
-        ),
-        SizedBox(height: 20,),
-      ]
-      ),
+      ]),
     );
   }
 }

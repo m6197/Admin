@@ -1,5 +1,5 @@
 import 'package:animated_button_bar/animated_button_bar.dart';
-import 'package:course1/layoutComponents/bones.dart';
+import 'package:course1/view/layoutComponents/bones.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'AddNewSpeciality.dart';
@@ -142,20 +142,19 @@ class _SpecialityScreenState extends State<SpecialityScreen> {
             ),
           ],
         ),
-      ]
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(
-          this.context,
-          MaterialPageRoute(builder: (context) => const AddNewSpeciality()),
-        );
-      },
-        child :  const Icon(
+      ]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            this.context,
+            MaterialPageRoute(builder: (context) => const AddNewSpeciality()),
+          );
+        },
+        child: const Icon(
           Icons.add,
-
         ),
-        backgroundColor: const Color.fromRGBO(1, 205, 170,70),
-        focusColor: const Color.fromRGBO(1, 205, 170,70),
+        backgroundColor: const Color.fromRGBO(1, 205, 170, 70),
+        focusColor: const Color.fromRGBO(1, 205, 170, 70),
       ),
     );
   }

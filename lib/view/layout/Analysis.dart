@@ -1,6 +1,6 @@
 import 'package:animated_button_bar/animated_button_bar.dart';
-import 'package:course1/layout/AddNewAnalysis.dart';
-import 'package:course1/layoutComponents/Coved%2019.dart';
+import 'package:course1/view/layout/AddNewAnalysis.dart';
+import 'package:course1/view/layoutComponents/Coved%2019.dart';
 import 'package:flutter/material.dart';
 
 class Analysis_screen extends StatelessWidget {
@@ -11,20 +11,19 @@ class Analysis_screen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-
           Container(
-            width:double.infinity,
+            width: double.infinity,
             height: 150,
-            decoration:  const BoxDecoration(
-              color:  Color.fromRGBO(1, 205, 170,70),
+            decoration: const BoxDecoration(
+              color: Color.fromRGBO(1, 205, 170, 70),
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(20.0),
                 bottomLeft: Radius.circular(20.0),
               ),
             ),
-
             child: const Center(
-              child: const Text('Analysis',
+              child: const Text(
+                'Analysis',
                 style: TextStyle(
                   fontSize: 32,
                   color: Colors.white,
@@ -33,41 +32,48 @@ class Analysis_screen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //inverted selection button bar
               AnimatedButtonBar(
-                backgroundColor: const Color.fromRGBO(1, 205, 170 ,190),
-                foregroundColor: const Color.fromRGBO(1, 205, 170 ,120),
+                backgroundColor: const Color.fromRGBO(1, 205, 170, 190),
+                foregroundColor: const Color.fromRGBO(1, 205, 170, 120),
                 radius: 25.0,
                 padding: const EdgeInsets.all(16.0),
                 invertedSelection: false,
                 children: [
-                  ButtonBarEntry ( onTap: () => print('first item tapped'),
-                    child: const Text('All',
+                  ButtonBarEntry(
+                    onTap: () => print('first item tapped'),
+                    child: const Text(
+                      'All',
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  ButtonBarEntry(onTap: () => print('Third item tapped'),
-                      child: const Text('Avaliable Today',
+                  ButtonBarEntry(
+                      onTap: () => print('Third item tapped'),
+                      child: const Text(
+                        'Avaliable Today',
                         style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-
-                        ),)),
-                  ButtonBarEntry(onTap: () => print('Third item tapped'), child: const Text('Cancel',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-
-
+                        ),
+                      )),
+                  ButtonBarEntry(
+                    onTap: () => print('Third item tapped'),
+                    child: const Text(
+                      'Cancel',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
                   ),
                 ],
               ),
@@ -83,13 +89,13 @@ class Analysis_screen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(90, 50),
                     maximumSize: const Size(105, 50),
-                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    primary: const Color.fromRGBO(1, 205, 170, 120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   child: const Text("Coved 19"),
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -97,53 +103,55 @@ class Analysis_screen extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(width: 15,),
+                const SizedBox(
+                  width: 15,
+                ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(90, 50),
                     maximumSize: const Size(105, 50),
-                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    primary: const Color.fromRGBO(1, 205, 170, 120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   child: const Text("CPC"),
-
-
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
-                const SizedBox(width: 15,),
+                const SizedBox(
+                  width: 15,
+                ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(90, 50),
                     maximumSize: const Size(105, 50),
-                    primary: const Color.fromRGBO(1, 205, 170 ,120),
+                    primary: const Color.fromRGBO(1, 205, 170, 120),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  child: const Text("DNA",
-
+                  child: const Text(
+                    "DNA",
                   ),
-                  onPressed: (){},
+                  onPressed: () {},
                 ),
               ],
             ),
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const AddNewAnalysis()),
-        );
-      },
-        child :  const Icon(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddNewAnalysis()),
+          );
+        },
+        child: const Icon(
           Icons.add,
-
         ),
-        backgroundColor: const Color.fromRGBO(1, 205, 170,70),
-        focusColor: const Color.fromRGBO(1, 205, 170,70),
+        backgroundColor: const Color.fromRGBO(1, 205, 170, 70),
+        focusColor: const Color.fromRGBO(1, 205, 170, 70),
       ),
     );
   }
