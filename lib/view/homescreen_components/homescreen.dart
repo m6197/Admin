@@ -149,7 +149,7 @@ class _homescrrenState extends State<homescrren> {
                               child: cardBuilder(
                                   "Edit Schedule",
                                   "assets/image/noun-report-987711.png",
-                                  AddNewAnalysis(),
+                                  ChooseDoctor("Edit"),
                                   context),
                             ),
                             Padding(
@@ -157,7 +157,7 @@ class _homescrrenState extends State<homescrren> {
                               child: cardBuilder(
                                   "Delete Schedule",
                                   "assets/image/noun-report-987711.png",
-                                  AnalysisScreen(),
+                                  ChooseDoctor("Delete"),
                                   context),
                             ),
                           ],

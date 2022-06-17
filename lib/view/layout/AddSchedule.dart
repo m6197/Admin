@@ -6,7 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddSchedule extends StatelessWidget {
   final double id;
-  AddSchedule(this.id);
+  final String method;
+  AddSchedule(this.id, this.method);
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<MainCubit, MainStates>(
@@ -76,7 +77,17 @@ class AddSchedule extends StatelessWidget {
                           function: () {
                             if (cubit.formkeyAddSchdule.currentState!
                                 .validate()) {
-                              cubit.addDoctorSchedule(id, context);
+                              switch (method) {
+                                case "Add":
+                                  cubit.addDoctorSchedule(id, context);
+                                  break;
+                                case "Edit":
+                                  cubit.editDoctorSchedule(id, context);
+                                  break;
+                                case "Delete":
+                                  cubit.deleteDoctorSchedule(id, context);
+                                  break;
+                              }
                             }
                           }),
                     ]),

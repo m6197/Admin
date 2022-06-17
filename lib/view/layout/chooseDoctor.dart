@@ -155,7 +155,8 @@ class ChooseDoctor extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AddSchedule(doctorModel.id)));
+                        builder: (context) =>
+                            AddSchedule(doctorModel.id, method)));
               },
             ),
           ],

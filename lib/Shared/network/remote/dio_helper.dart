@@ -63,4 +63,22 @@ class DioHelper {
       data: data,
     );
   }
+
+  static Future<Response> delData({
+    required String url,
+    required Map<String, dynamic> data,
+    String lang = 'en',
+    String? token,
+  }) async {
+    dio!.options.headers = {
+      'lang': lang,
+      'Authorization': token ?? '',
+      'Content-Type': 'application/json',
+    };
+
+    return dio!.delete(
+      url,
+      data: data,
+    );
+  }
 }
