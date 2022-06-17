@@ -92,6 +92,18 @@ class _homescrrenState extends State<homescrren> {
                                 ],
                               ),
                             ),
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Row(
+                                children: [
+                                  cardBuilder(
+                                      "Add Radiolgy",
+                                      "assets/image/noun-x-ray-4792268.png",
+                                      Doctor_screen(),
+                                      context)
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
