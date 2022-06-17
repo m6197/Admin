@@ -5,6 +5,7 @@ import 'package:course1/view/layout/AddNewDoctor.dart';
 import 'package:course1/view/layout/AddNewRadiolgy.dart';
 import 'package:course1/view/layout/Analysis.dart';
 import 'package:course1/view/layout/Radiolgy_Screen.dart';
+import 'package:course1/view/layout/chooseDoctor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -124,6 +125,38 @@ class _homescrrenState extends State<homescrren> {
                               child: cardBuilder(
                                   "All Analysis",
                                   "assets/image/noun-test-tube-987718.png",
+                                  AnalysisScreen(),
+                                  context),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "Add Schedule",
+                                  "assets/image/noun-report-987711.png",
+                                  ChooseDoctor("Add"),
+                                  context),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "Edit Schedule",
+                                  "assets/image/noun-report-987711.png",
+                                  AddNewAnalysis(),
+                                  context),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "Delete Schedule",
+                                  "assets/image/noun-report-987711.png",
                                   AnalysisScreen(),
                                   context),
                             ),

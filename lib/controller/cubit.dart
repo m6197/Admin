@@ -6,6 +6,7 @@ import 'package:course1/controller/states.dart';
 import 'package:course1/model/AnalysisModel.dart';
 import 'package:course1/model/DoctorModel.dart';
 import 'package:course1/model/RadiolgyModel.dart';
+import 'package:course1/view/layout/navscrren.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,6 +45,10 @@ class MainCubit extends Cubit<MainStates> {
   var formkeyNewAnalysis = GlobalKey<FormState>();
   bool addingAnalysis = false;
   List<Analysis> analysis = [];
+  var formkeyAddSchdule = GlobalKey<FormState>();
+  var AddScheduleControl = TextEditingController();
+  var AddScheduleDayName = TextEditingController();
+  bool addingSchedule = false;
 //------------------------Methods------------------//
   void getDoctors() {
     print(true);
@@ -178,6 +183,42 @@ class MainCubit extends Cubit<MainStates> {
       addingDoctor = false;
       emit(ErrorSignupDoctorState());
       print(onError);
+    });
+  }
+
+  void addDoctorSchedule(double id, context) {
+    addingSchedule = true;
+    emit(LoadingSchedule());
+    DioHelper.postData(url: DoctorSchedule, data: {
+      "doctor_id": id,
+      "day": AddScheduleDayName.text,
+      "time": AddScheduleControl.text
+    }).then((value) {
+      print(value.data);
+      addingSchedule = false;
+      emit(SuccessSchedule());
+      getDoctors();
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => navscreen()),
+          (route) => false);
+    }).catchError((onError) {
+      addingSchedule = false;
+      emit(ErrorSchedule());
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Row(
+            children: [
+              Icon(
+                Icons.error,
+                color: Colors.white,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text(onError.response.data['message'])
+            ],
+          )));
     });
   }
 }

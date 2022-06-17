@@ -21,3 +21,9 @@ class LoadingAddRadiologyState extends MainStates {}
 class SuccessAddRadiologyState extends MainStates {}
 
 class ErrorAddRadiologyState extends MainStates {}
+
+class LoadingSchedule extends MainStates {}
+
+class SuccessSchedule extends MainStates {}
+
+class ErrorSchedule extends MainStates {}

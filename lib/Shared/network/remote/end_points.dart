@@ -4,3 +4,4 @@ String SetDoctorImage = 'doctor/image';
 String GetDoctors = "admin/doctor";
 String AvailableAnalysis = "admin/analysis";
 String AvailableRadiology = "admin/radiology";
+String DoctorSchedule = "admin/schedule";
