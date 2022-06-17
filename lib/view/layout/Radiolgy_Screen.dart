@@ -1,162 +1,128 @@
 import 'package:animated_button_bar/animated_button_bar.dart';
-import 'package:course1/view/layoutComponents/X-rays.dart';
+import 'package:course1/controller/cubit.dart';
+import 'package:course1/model/RadiolgyModel.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter/material.dart';
 
-import 'AddNewRadiolgy.dart';
-
-class RadiolgyScreen extends StatefulWidget {
-  @override
-  State<RadiolgyScreen> createState() => _RadiolgyScreenState();
-}
-
-class _RadiolgyScreenState extends State<RadiolgyScreen> {
-  bool showContainer = false;
+class RadiolgyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(1, 205, 170, 70),
+        toolbarHeight: 0,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        child: Column(children: [
           Container(
             width: double.infinity,
-            height: 150,
-            decoration: const BoxDecoration(
-              color: const Color.fromRGBO(1, 205, 170, 70),
-              borderRadius: const BorderRadius.only(
-                bottomRight: const Radius.circular(20.0),
-                bottomLeft: Radius.circular(20.0),
+            height: 150.h,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(1, 205, 170, 70),
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(20.0.r),
+                bottomLeft: Radius.circular(20.0.r),
               ),
             ),
-            child: const Center(
-              child: Text(
-                'Radiolgy',
-                style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    )),
+                Center(
+                  child: Text(
+                    'Radiolgy',
+                    style: TextStyle(
+                      fontSize: 32.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //inverted selection button bar
               AnimatedButtonBar(
-                backgroundColor: const Color.fromRGBO(1, 205, 170, 190),
-                foregroundColor: const Color.fromRGBO(1, 205, 170, 120),
-                radius: 25.0,
-                padding: const EdgeInsets.all(16.0),
+                backgroundColor: Color.fromRGBO(1, 205, 170, 190),
+                foregroundColor: Color.fromRGBO(1, 205, 170, 120),
+                radius: 25.0.r,
+                padding: EdgeInsets.all(16.0),
                 invertedSelection: false,
                 children: [
                   ButtonBarEntry(
-                    onTap: () => print('first item tapped'),
-                    child: const Text(
+                    onTap: () => () {},
+                    child: Text(
                       'All',
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   ButtonBarEntry(
-                      onTap: () => print('Third item tapped'),
-                      child: const Text(
+                      onTap: () {},
+                      child: Text(
                         'Avaliable Today',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
                       )),
-                  ButtonBarEntry(
-                    onTap: () => print('Third item tapped'),
-                    child: const Text(
-                      'Cancel',
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                 ],
               ),
+              Padding(
+                  padding: EdgeInsets.all(10.0.r),
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: (8 / 2).h,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 20),
+                      itemCount: MainCubit.GET(context).radiology.length,
+                      itemBuilder: (context, index) {
+                        return RadiolgyCard(
+                            MainCubit.GET(context).radiology[index], context);
+                      })),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(105, 50),
-                    maximumSize: const Size(110, 50),
-                    primary: const Color.fromRGBO(1, 205, 170, 120),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  child: const Text("X-rays"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Xrays()),
-                    );
-                  },
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(90, 50),
-                    maximumSize: const Size(115, 50),
-                    primary: const Color.fromRGBO(1, 205, 170, 120),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  child: const Text("  X-rays with \n        dye"),
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(90, 50),
-                    maximumSize: const Size(105, 50),
-                    primary: const Color.fromRGBO(1, 205, 170, 120),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  child: const Text(
-                    "Ultrasound",
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
-        ],
+        ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            this.context,
-            MaterialPageRoute(builder: (context) => const AddNewRadiolgy()),
-          );
-        },
-        child: const Icon(
-          Icons.add,
+    );
+  }
+
+  Widget RadiolgyCard(Radiolgy analysis, context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size(105, 50),
+        maximumSize: Size(110, 50),
+        primary: Color.fromRGBO(1, 205, 170, 120),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0.r),
         ),
-        backgroundColor: const Color.fromRGBO(1, 205, 170, 70),
-        focusColor: const Color.fromRGBO(1, 205, 170, 70),
       ),
+      child: Center(
+          child: Text(
+        analysis.name,
+        textAlign: TextAlign.center,
+      )),
+      onPressed: () => null,
     );
   }
 }

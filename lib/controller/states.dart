@@ -15,3 +15,9 @@ class LoadingSignupDoctorState extends MainStates {}
 class SuccessSignupDoctorState extends MainStates {}
 
 class ErrorSignupDoctorState extends MainStates {}
+
+class LoadingAddRadiologyState extends MainStates {}
+
+class SuccessAddRadiologyState extends MainStates {}
+
+class ErrorAddRadiologyState extends MainStates {}

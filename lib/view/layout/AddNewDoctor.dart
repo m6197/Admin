@@ -161,7 +161,6 @@ class _AddDoctorState extends State<AddDoctor> {
                                         cubit.NewDoctor(context);
                                       } else {}
                                     }
-                                    ;
                                   }),
                             ),
                           ),

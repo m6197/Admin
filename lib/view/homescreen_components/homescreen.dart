@@ -1,6 +1,8 @@
 import 'package:course1/controller/cubit.dart';
 import 'package:course1/controller/states.dart';
+import 'package:course1/view/layout/AddNewAnalysis.dart';
 import 'package:course1/view/layout/AddNewDoctor.dart';
+import 'package:course1/view/layout/AddNewRadiolgy.dart';
 import 'package:course1/view/layout/Analysis.dart';
 import 'package:course1/view/layout/Radiolgy_Screen.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +43,7 @@ class _homescrrenState extends State<homescrren> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
                                     'Hello Admin',
@@ -67,42 +69,63 @@ class _homescrrenState extends State<homescrren> {
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
                               padding: EdgeInsets.all(15.0),
-                              child: Row(
-                                children: [
-                                  cardBuilder(
-                                      "Add Doctor",
-                                      "assets/image/noun-doctor-987749.png",
-                                      AddDoctor(),
-                                      context)
-                                ],
-                              ),
+                              child: cardBuilder(
+                                  "Add Doctor",
+                                  "assets/image/noun-doctor-987749.png",
+                                  AddDoctor(),
+                                  context),
                             ),
                             Padding(
                               padding: EdgeInsets.all(15.0),
-                              child: Row(
-                                children: [
-                                  cardBuilder(
-                                      "All Doctor",
-                                      "assets/image/noun-doctor-987749.png",
-                                      Doctor_screen(),
-                                      context)
-                                ],
-                              ),
+                              child: cardBuilder(
+                                  "All Doctor",
+                                  "assets/image/noun-doctor-987749.png",
+                                  Doctor_screen(),
+                                  context),
                             ),
                             Padding(
                               padding: EdgeInsets.all(15.0),
-                              child: Row(
-                                children: [
-                                  cardBuilder(
-                                      "Add Radiolgy",
-                                      "assets/image/noun-x-ray-4792268.png",
-                                      Doctor_screen(),
-                                      context)
-                                ],
-                              ),
+                              child: cardBuilder(
+                                  "Add Radiolgy",
+                                  "assets/image/noun-x-ray-4792268.png",
+                                  AddNewRadiolgy(),
+                                  context),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "All Radiolgy",
+                                  "assets/image/noun-x-ray-4792268.png",
+                                  RadiolgyScreen(),
+                                  context),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "Add Analysis",
+                                  "assets/image/noun-test-tube-987718.png",
+                                  AddNewAnalysis(),
+                                  context),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: cardBuilder(
+                                  "All Analysis",
+                                  "assets/image/noun-test-tube-987718.png",
+                                  AnalysisScreen(),
+                                  context),
                             ),
                           ],
                         ),
