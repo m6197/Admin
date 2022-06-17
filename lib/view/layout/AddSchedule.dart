@@ -46,27 +46,31 @@ class AddSchedule extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      Text(
-                        'Please Enter Schedule time with space between',
-                        style: TextStyle(
-                          color: Color.fromRGBO(1, 205, 170, 120),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      method == "Delete"
+                          ? Container()
+                          : Text(
+                              'Please Enter Schedule time with space between',
+                              style: TextStyle(
+                                color: Color.fromRGBO(1, 205, 170, 120),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                       SizedBox(
                         height: 10,
                       ),
-                      defaultformfiled(
-                          controller: cubit.AddScheduleControl,
-                          label: '',
-                          prefix: null,
-                          type: TextInputType.emailAddress,
-                          validate: (value) {
-                            if (value!.isEmpty) {
-                              return 'Enter your Email';
-                            }
-                            return null;
-                          }),
+                      method == "Delete"
+                          ? Container()
+                          : defaultformfiled(
+                              controller: cubit.AddScheduleControl,
+                              label: '',
+                              prefix: null,
+                              type: TextInputType.emailAddress,
+                              validate: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Enter your Email';
+                                }
+                                return null;
+                              }),
                       SizedBox(
                         height: 20,
                       ),
